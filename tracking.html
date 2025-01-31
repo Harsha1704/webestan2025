@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donation Tracker</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background: #28a745;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Map Styling */
+#map {
+    width: 90%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tracking Information */
+#tracking-info {
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    text-align: center;
+}
+
+h2 {
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+/* Info Blocks */
+.info-block {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-block p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Scooter Emoji Marker */
+.custom-icon {
+    font-size: 24px;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🍽️ Food Donation Live Tracker</h1>
+    </header>
+
+    <section class="container">
+        <div id="map"></div>
+
+        <div id="tracking-info">
+            <h2>📦 Live Tracking Details</h2>
+            
+            <div class="info-block">
+                <p><strong>📍 Pickup Location:</strong> <span id="restaurant-name">Food Haven</span></p>
+                <p><strong>🏢 NGO Receiving:</strong> <span id="ngo-name">Helping Hands</span></p>
+            </div>
+
+            <div class="info-block">
+                <p><strong>🛵 Current Driver Location:</strong> <span id="driver-location">Updating...</span></p>
+                <p><strong>🕒 Estimated Arrival:</strong> <span id="eta">Calculating...</span></p>
+                <p><strong>🚦 Status:</strong> <span id="status">Awaiting Driver...</span></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize map
+const map = L.map('map').setView([37.7749, -122.4194], 13);
+
+// Add OpenStreetMap tile layer
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+// Locations
+const restaurantLocation = [37.7749, -122.4194];
+const ngoLocation = [37.7840, -122.4034];
+let driverLocation = [...restaurantLocation];
+
+// Add markers
+L.marker(restaurantLocation).addTo(map).bindPopup("🍽️ Restaurant: Food Haven").openPopup();
+L.marker(ngoLocation).addTo(map).bindPopup("🏢 NGO: Helping Hands");
+
+// Moving scooter 🛵
+const scooterIcon = L.divIcon({
+    className: 'custom-icon',
+    html: '🛵',
+    iconSize: [30, 30]
+});
+
+const scooterMarker = L.marker(driverLocation, { icon: scooterIcon }).addTo(map);
+
+// Simulate movement towards the NGO
+let step = 0;
+const steps = 50;
+const delay = 500; // 0.5 seconds per move
+
+function moveScooter() {
+    if (step < steps) {
+        driverLocation[0] += (ngoLocation[0] - restaurantLocation[0]) / steps;
+        driverLocation[1] += (ngoLocation[1] - restaurantLocation[1]) / steps;
+
+        scooterMarker.setLatLng(driverLocation);
+        document.getElementById("driver-location").innerText = `Lat: ${driverLocation[0].toFixed(4)}, Lng: ${driverLocation[1].toFixed(4)}`;
+        document.getElementById("eta").innerText = `${Math.max(0, Math.ceil((steps - step) / 2))} mins`;
+        document.getElementById("status").innerText = "🚚 In Transit";
+
+        step++;
+        setTimeout(moveScooter, delay);
+    } else {
+        document.getElementById("status").innerText = "✅ Delivered!";
+    }
+}
+
+// Start movement after 2 seconds
+setTimeout(moveScooter, 2000);
+
+    </script>
+
+</body>
+</html>

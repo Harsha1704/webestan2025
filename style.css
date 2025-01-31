@@ -1,0 +1,90 @@
+body {
+    background: rgb(255, 249, 187);
+    background: linear-gradient(90deg, rgba(255, 249, 187, 1) 16%, rgba(255, 249, 187, 1) 33%, rgba(113, 159, 128, 1) 48%, rgba(38, 111, 97, 1) 56%, rgba(147, 25, 151, 1) 71%, rgba(15, 173, 194, 1) 83%, rgba(0, 212, 255, 1) 100%);
+}
+
+header {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    background: #007bff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffdd57; /* Highlight color on hover */
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05) rotateY(5deg);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    font-size: 40px;
+    display: block;
+}
+
+h1, h2 {
+    color: #162938;
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+}
+
+.button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

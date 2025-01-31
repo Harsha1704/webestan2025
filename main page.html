@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Waste Reducing Website</title>
+      <style>
+  body {
+    background: url('https://img.freepik.com/premium-photo/ecofriendly-kitchen-organization-sustainable-food-storage-solutions-background_1019046-542.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    color: white; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(taj.jpg) no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px); 
+    z-index: -1; 
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 10px 0; 
+}
+
+#b1 {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    text-decoration: none;
+    padding: 10px 20px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px; 
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.dropdown {
+    position: relative; 
+}
+
+a {
+    text-decoration: none;
+    color: #FFD700 ; 
+    font-size: 20px; 
+    padding: 10px 15px; 
+    transition: background-color 0.3s ease; 
+}
+
+a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 5px; }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9); 
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    border-radius: 5px; 
+}
+
+.dropdown-content a {
+    color: #333; 
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #d5eb0c; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; 
+}
+
+.dropdown:hover .dropbtn {
+    background-color: transparent; 
+}
+
+main {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1; 
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: -1; 
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: #FFD700; 
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; 
+}
+
+h1 {
+    font-size: 36px;
+    font-family: 'Georgia', serif; 
+    border-bottom: 2px solid #FFD700; 
+    padding-bottom: 10px; 
+}
+
+h2 {
+    font-size: 24px;
+    font-family: 'Georgia', serif; 
+    margin-top: 20px; }
+
+p {
+    font-family: 'Verdana', sans-serif; 
+    font-size: 18px; 
+    margin: 15px 0; 
+    padding: 15px; 
+    border-left: 4px solid #FFD700; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+    max-width: 600px; 
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+button {
+    background-color: #FFD700; 
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: bold; 
+}
+
+button:hover {
+    background-color: #FFC107; 
+}
+
+footer {
+    background-color: rgba(0, 0 , 0, 0.7);
+    color: #FFD700; 
+    padding: 10px;
+    text-align: center;
+    clear: both;
+}
+      </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    <header>
+        <div id="b1">
+            <div class="dropdown" >
+                <a href="javascript:void(0)" class="dropbtn">Topics</a>
+                <div class="dropdown-content">
+                    <a href="first.html" target="_blank">Age Prepared Food</a>
+                    <a href="gamification.html" target="_blank">Gamification</a>
+                    <a href="foodreceipe.html" target="_blank">Food receipe</a>
+                    <a href="community.html">Community</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Contact</a>
+                <div class="dropdown-content">
+                    <a href="contact.html" target="_blank">Contact us</a>
+                    <a href="faq.html" target="_blank">FAQ</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Communnciation</a>
+                <div class="dropdown-content">
+                    <a href="tracking.html" target="_blank">Tracking</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Profile</a>
+                <div class="dropdown-content">
+                    <a href="profile.html" target="_blank">Profile</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Understanding Food Reduction</h1>
+        <section>
+            <h2>What is Food Reduction?</h2>
+            <p>Food reduction refers to minimizing food waste by efficiently using resources, consuming responsibly, and adopting sustainable practices. It involves cutting down on excess food production, reducing wastage at home and in industries, and finding innovative ways to preserve and repurpose food.</p>
+            <p>By reducing food waste, individuals and businesses can contribute to a more sustainable environment, conserve resources, and ensure food security for future generations.</p>
+        </section>
+    
+        <section>
+            <h2>Advantages of Food Reduction</h2>
+            <p>Food reduction brings numerous benefits to society, the economy, and the environment. Some of the key advantages include:</p>
+            <ul>
+                <li><strong>Environmental Benefits:</strong> Reducing food waste decreases landfill waste, lowers greenhouse gas emissions, and conserves natural resources like water and energy.</li>
+                <li><strong>Economic Savings:</strong> Less food waste means reduced grocery bills, lower disposal costs, and increased efficiency in food production and distribution.</li>
+                <li><strong>Food Security:</strong> Proper food management ensures that surplus food can be redirected to those in need, reducing hunger and improving global food distribution.</li>
+                <li><strong>Healthier Consumption:</strong> Mindful eating habits lead to better portion control, reducing overconsumption and promoting healthier lifestyles.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Disadvantages of Food Reduction</h2>
+            <p>While food reduction is highly beneficial, there are some challenges associated with implementing it:</p>
+            <ul>
+                <li><strong>Initial Costs:</strong> Implementing sustainable food storage, preservation techniques, and waste reduction programs may require initial investments.</li>
+                <li><strong>Behavioral Changes:</strong> Encouraging people to change long-standing food habits, such as portion control and mindful consumption, can be difficult.</li>
+                <li><strong>Supply Chain Challenges:</strong> Reducing food waste in industries may impact certain jobs, particularly those dependent on food production and disposal.</li>
+                <li><strong>Limited Awareness:</strong> Many individuals and businesses lack awareness of food reduction practices, making it harder to implement on a large scale.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>Conclusion</h2>
+            <p>Food reduction plays a crucial role in promoting sustainability, saving resources, and ensuring a fair distribution of food globally. While there are challenges, the benefits far outweigh the drawbacks, making it essential for individuals, businesses, and governments to adopt food reduction strategies.</p>
+            <button id="learnMoreBtn">Learn More</button>
+            <p id="moreInfo" style="display:none;">By making conscious choices about food consumption and waste, we can contribute to a healthier planet and a more sustainable future.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Food waste reducing system. All Rights Reserved.</p>
+    </footer>
+    <script>
+      document.getElementById("learnMoreBtn").addEventListener("click", function() {
+    var moreInfo = document.getElementById("moreInfo");
+    if (moreInfo.style.display === "none") {
+        moreInfo.style.display = "block";
+    } else {
+        moreInfo.style.display = "none";
+    }
+});
+    </script>
+</body>
+</html>

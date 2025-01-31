@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriGuide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('pic2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        main {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-top: 80px;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            width: 45%;
+        }
+        .card:hover {
+            transform: scale(1.05) rotateY(10deg);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .icon {
+            font-size: 40px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NutriGuide</h1>
+    </header>
+    <main>
+        <h2>Your Personal Food Guide</h2>
+        <p>Get personalized food recommendations based on your age or health conditions. Choose your path to better nutrition.</p>
+        <div class="cards">
+            <div class="card" id="age-based">
+                <span class="icon">&#128100;</span>
+                <h3>Age-Based</h3>
+                <p>Tailored recommendations for your life stage</p>
+            </div>
+            <div class="card" id="health-based">
+                <span class="icon">&#10084;</span>
+                <h3>Health-Based</h3>
+                <p>Recommendations for specific health conditions</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.getElementById('age-based').addEventListener('click', function() {
+            window.location.href = "second.html"; 
+        });
+    </script>
+</body>
+</html>

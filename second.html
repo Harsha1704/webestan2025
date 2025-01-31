@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriGuide</title>
+    <style>
+        body {
+            perspective: 1000px; /* Added perspective for 3D effect */
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #E3F2FD, #ffffff);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2E7D32;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 120px;
+            font-size: 14px;
+            color: gray;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2E7D32;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+        .card-container {
+            display: flex;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            width: 200px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <span class="logo">🍏 NutriGuide</span>
+        
+    </header>
+    <br>
+    <button class="back-button" onclick="window.location.href='first.html'">← Back to options</button>
+    <div class="container">
+        <h1 class="title">Select Your Age Group</h1>
+        <p class="subtitle">Choose your age group for personalized nutrition recommendations</p>
+        <div class="card-container" style="transform-style: preserve-3d;">
+            <div class="card" id="children">
+                <div class="icon">👶</div>
+                <h2>Children (0-12)</h2>
+                <p>Growing minds and bodies</p>
+            </div>
+            <div class="card" id="teenage">
+                <div class="icon">🧑</div>
+                <h2>Teenage (13-19)</h2>
+                <p>Active and developing</p>
+            </div>
+            <div class="card" id="elderly">
+                <div class="icon">🧓</div>
+                <h2>Elderly (60+)</h2>
+                <p>Wisdom and wellness</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('children').addEventListener('click', function() {
+            window.location.href = "third.html?group=children"; 
+        });
+        document.getElementById('teenage').addEventListener('click', function() {
+            window.location.href = "third.html?group=teenage"; 
+        });
+        document.getElementById('elderly').addEventListener('click', function() {
+            window.location.href = "third.html?group=elderly"; 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Nutrition</title>
+    <style>
+        body {
+            perspective: 1000px; /* Added perspective for 3D effect */
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+        }
+        h2 {
+            color: #004d99;
+        }
+        .age-groups {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .age-group {
+            background: #e6f2ff;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            width: 150px;
+            transition: 0.3s;
+        }
+        .age-group:hover {
+            background: #4da6ff;
+            color: white;
+        }
+        .recommendations {
+            margin-top: 30px;
+        }
+        .recommendation-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .recommendation-item {
+            background: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Choose your age group for personalized nutrition recommendations</h2>
+        <div class="age-groups" style="transform-style: preserve-3d;">
+            <div class="age-group" id="children">
+                <span>👶</span>
+                <h3>Children (0-12)</h3>
+                <p>Growing minds and bodies</p>
+            </div>
+            <div class="age-group" id="teenage">
+                <span>🧑</span>
+                <h3>Teenage (13-19)</h3>
+                <p>Active and developing</p>
+            </div>
+            <div class="age-group" id="elderly">
+                <span>🧓</span>
+                <h3>Elderly (60+)</h3>
+                <p>Wisdom and wellness</p>
+            </div>
+        </div>
+        <div class="recommendations" style="transform-style: preserve-3d;">
+            <h2>Your Personalized Recommendations</h2>
+            <div id="recommendation-list" class="recommendation-list">
+                <!-- Recommendations will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const ageGroup = urlParams.get('group');
+
+        // Recommendations data
+        const recommendations = {
+            children: [
+                "Milk and dairy products for calcium",
+                "Lean proteins like chicken and fish",
+                "Colorful fruits and vegetables",
+                "Whole grain cereals and bread"
+            ],
+            teenage: [
+                "Protein-rich foods for muscle growth",
+                "Iron-rich foods like spinach",
+                "Dairy for strong bones",
+                "Healthy fats from nuts"
+            ],
+            elderly: [
+                "Calcium-rich foods for bone health",
+                "Low-sodium diet for heart health",
+                "Fiber-rich foods for digestion",
+                "Hydration and herbal teas"
+            ]
+        };
+
+        // Function to display recommendations based on the selected age group
+        function displayRecommendations(group) {
+            const recommendationList = document.getElementById("recommendation-list");
+            recommendationList.innerHTML = ""; // Clear previous recommendations
+
+            recommendations[group].forEach(item => {
+                const recommendationItem = document.createElement("div");
+                recommendationItem.classList.add("recommendation-item");
+                recommendationItem.textContent = item;
+                recommendationList.appendChild(recommendationItem);
+            });
+        }
+
+        // Display recommendations for the selected age group
+        if (ageGroup && recommendations[ageGroup]) {
+            displayRecommendations(ageGroup);
+        } else {
+            document.getElementById("recommendation-list").innerHTML = "<p>No recommendations available.</p>";
+        }
+    </script>
+</body>
+</html>

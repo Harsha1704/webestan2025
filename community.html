@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Waste Reduction Community</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5dc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #d2b48c;
+            color: white;
+            font-size: 24px;
+        }
+        .chatbox {
+            border: 1px solid #ccc;
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+            background: #fff;
+        }
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+        }
+        .donate-section {
+            margin-top: 20px;
+        }
+        .donate-list {
+            list-style: none;
+            padding: 0;
+        }
+        .donate-list li {
+            padding: 10px;
+            border: 1px solid #d2b48c;
+            margin-bottom: 5px;
+            background: #fff;
+        }
+        .faq {
+            margin-top: 20px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Food Waste Reduction Community</div>
+    <div class="container">
+        <h2>Live Chat</h2>
+        <div class="chatbox" id="chatbox"></div>
+        <input type="text" class="input-box" id="chatInput" placeholder="Type a message..." onkeypress="sendMessage(event)">
+        
+        <div class="donate-section">
+            <h2>Donate Food</h2>
+            <input type="text" id="foodItem" placeholder="Enter food item">
+            <button onclick="addDonation()">Donate</button>
+            <ul class="donate-list" id="donateList"></ul>
+        </div>
+        
+        <div class="faq">
+            <h2>Food Waste Reduction Q&A</h2>
+            <p><strong>Q: How can I reduce food waste at home?</strong></p>
+            <p>A: Plan meals, store food properly, and use leftovers creatively.</p>
+            <p><strong>Q: Where can I donate excess food?</strong></p>
+            <p>A: You can donate to local food banks, shelters, and community fridges.</p>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage(event) {
+            if (event.key === 'Enter') {
+                let chatbox = document.getElementById("chatbox");
+                let input = document.getElementById("chatInput").value;
+                if (input.trim() !== "") {
+                    let message = document.createElement("p");
+                    message.textContent = input;
+                    chatbox.appendChild(message);
+                    document.getElementById("chatInput").value = "";
+                    chatbox.scrollTop = chatbox.scrollHeight;
+                }
+            }
+        }
+
+        function addDonation() {
+            let item = document.getElementById("foodItem").value;
+            if (item.trim() !== "") {
+                let list = document.getElementById("donateList");
+                let listItem = document.createElement("li");
+                listItem.textContent = item;
+                list.appendChild(listItem);
+                document.getElementById("foodItem").value = "";
+            }
+        }
+    </script>
+</body>
+</html>

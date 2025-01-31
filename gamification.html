@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Waste Warriors</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+header {
+    padding: 20px;
+}
+
+.title {
+    font-size: 3rem;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+    transform: rotateY(10deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.title:hover {
+    transform: rotateY(-10deg) scale(1.1);
+}
+
+.gamification {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.xp-container, .leaderboard {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.actions {
+    margin-top: 30px;
+}
+
+.action-btn {
+    background: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="title">🥗 Food Waste Warriors 🎮</h1>
+        <p class="subtitle">Reduce food waste, earn rewards, and climb the leaderboard!</p>
+    </header>
+
+    <section class="gamification">
+        <div class="xp-container">
+            <h2>🎖️ Your Progress</h2>
+            <progress id="xp-bar" value="0" max="100"></progress>
+            <p id="xp-text">XP: 0/100</p>
+        </div>
+        
+        <div class="leaderboard">
+            <h2>🏆 Leaderboard</h2>
+            <ul id="leaderboard-list">
+                <li>🥇 Alex - 150 XP</li>
+                <li>🥈 Jamie - 120 XP</li>
+                <li>🥉 Chris - 110 XP</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="actions">
+        <h2>🎯 Earn XP by Reducing Food Waste</h2>
+        <button class="action-btn" data-xp="10">📸 Share a Meal-Saving Tip (10 XP)</button>
+        <button class="action-btn" data-xp="20">🍽️ Donate Excess Food (20 XP)</button>
+        <button class="action-btn" data-xp="30">💡 Teach Others About Waste (30 XP)</button>
+    </section>
+    <script>
+        let xp = 0;
+
+document.querySelectorAll('.action-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        let points = parseInt(button.dataset.xp);
+        xp += points;
+        if (xp > 100) xp = 100;
+        
+        document.getElementById('xp-bar').value = xp;
+        document.getElementById('xp-text').innerText = `XP: ${xp}/100`;
+
+        button.disabled = true;
+        button.innerText = "✅ Completed!";
+    });
+});
+
+    </script>
+
+</body>
+</html>

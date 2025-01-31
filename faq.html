@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Food Waste Reduction</title>
+   <style>
+    
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+
+header {
+    background: #28a745;
+    color: white;
+    padding: 20px;
+}
+.faq-container {
+    max-width: 700px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.faq {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    background: #28a745;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+}
+
+
+.chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.chatbox-toggle {
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.chatbox-content {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background: white;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.chatbox-header {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chatbox-messages {
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+#chat-input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+#send-btn {
+    width: 20%;
+    border: none;
+    background: #28a745;
+    color: white;
+    padding: 10px;
+}
+
+   </style>
+</head>
+<body>
+
+    <header>
+        <h1>🍽️ Frequently Asked Questions</h1>
+        <p>Find answers to common questions about food waste reduction and donation.</p>
+    </header>
+
+
+    <section class="faq-container">
+        <div class="faq">
+            <button class="faq-question">1️⃣ What is food waste reduction? ➕</button>
+            <div class="faq-answer">
+                <p>Food waste reduction refers to strategies and actions taken to prevent and minimize food wastage at all levels, from households to restaurants and industries.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">2️⃣ How can I donate leftover food? ➕</button>
+            <div class="faq-answer">
+                <p>You can donate food through our platform by connecting with nearby NGOs and food banks that accept fresh and non-expired food.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">3️⃣ Is it safe to donate leftover food? ➕</button>
+            <div class="faq-answer">
+                <p>Yes! As long as the food is properly stored, not expired, and follows hygiene guidelines, it can be donated.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">4️⃣ How do I track my food donation? ➕</button>
+            <div class="faq-answer">
+                <p>Once your donation is scheduled, you can track its journey to the NGO using our real-time tracking feature.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">5️⃣ Can businesses donate surplus food? ➕</button>
+            <div class="faq-answer">
+                <p>Yes! Restaurants, grocery stores, and event caterers can all donate excess food instead of throwing it away.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">6️⃣ What types of food can be donated? ➕</button>
+            <div class="faq-answer">
+                <p>Non-perishable items, fresh fruits, vegetables, and properly stored cooked food can be donated.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">7️⃣ What if I have a food allergy? ➕</button>
+            <div class="faq-answer">
+                <p>Donors must label allergens clearly so recipients are aware before consumption.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">8️⃣ Can individuals volunteer to reduce food waste? ➕</button>
+            <div class="faq-answer">
+                <p>Yes! You can volunteer by distributing food, raising awareness, or working with NGOs.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">9️⃣ How does food waste impact the environment? ➕</button>
+            <div class="faq-answer">
+                <p>Food waste contributes to greenhouse gas emissions and wastes resources like water and energy.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">🔟 What is the best way to compost food scraps? ➕</button>
+            <div class="faq-answer">
+                <p>Separate organic waste like vegetable peels, eggshells, and coffee grounds into a compost bin.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">1️⃣1️⃣ Can expired food be donated? ➕</button>
+            <div class="faq-answer">
+                <p>No, expired food should not be donated. However, items past the "best before" date may still be safe if stored properly.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">1️⃣2️⃣ How can restaurants reduce food waste? ➕</button>
+            <div class="faq-answer">
+                <p>By donating leftovers, optimizing inventory, and educating staff on portion control.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">1️⃣3️⃣ How does your platform track food donations? ➕</button>
+            <div class="faq-answer">
+                <p>Our system uses live GPS tracking to show where donations are and when they will arrive.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">1️⃣4️⃣ What happens if my donation is not picked up? ➕</button>
+            <div class="faq-answer">
+                <p>Contact our support team, and we will arrange a pickup with the nearest NGO.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">1️⃣5️⃣ How can I volunteer to help reduce food waste? ➕</button>
+            <div class="faq-answer">
+                <p>You can sign up as a volunteer to help with food collection, distribution, and awareness campaigns.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">1️⃣6️⃣ Do I need to pay to donate food? ➕</button>
+            <div class="faq-answer">
+                <p>No, donating food is completely free. We cover logistics through partnerships with NGOs and sponsors.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">1️⃣7️⃣ Can I track my impact from donations? ➕</button>
+            <div class="faq-answer">
+                <p>Yes, our platform shows the number of meals donated and the people helped through your contributions.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">1️⃣8️⃣ What types of food are best for donation? ➕</button>
+            <div class="faq-answer">
+                <p>Fresh fruits, vegetables, canned goods, packaged foods, and cooked meals in hygienic packaging.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">1️⃣9️⃣ How does reducing food waste save money? ➕</button>
+            <div class="faq-answer">
+                <p>By buying only what you need, reducing over-ordering, and utilizing leftovers efficiently.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <button class="faq-question">2️⃣0️⃣ How can I get updates on food waste reduction tips? ➕</button>
+            <div class="faq-answer">
+                <p>You can subscribe to our newsletter or follow us on social media for regular tips and updates.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="chatbox">
+        <button class="chatbox-toggle">💬 Chat with us</button>
+        <div class="chatbox-content">
+            <div class="chatbox-header">
+                <h3>🤖 AI Support</h3>
+                <button class="chatbox-close">❌</button>
+            </div>
+            <div class="chatbox-messages">
+                <p class="bot-message">Hello! How can I assist you today? 😊</p>
+            </div>
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+   <script>
+    // FAQ Toggle
+document.querySelectorAll(".faq-question").forEach(button => {
+    button.addEventListener("click", () => {
+        const answer = button.nextElementSibling;
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+            button.innerHTML = button.innerHTML.replace("➖", "➕");
+        } else {
+            answer.style.display = "block";
+            button.innerHTML = button.innerHTML.replace("➕", "➖");
+        }
+    });
+});
+
+
+const chatbox = document.querySelector(".chatbox-content");
+document.querySelector(".chatbox-toggle").addEventListener("click", () => {
+    chatbox.style.display = chatbox.style.display === "block" ? "none" : "block";
+});
+
+document.querySelector(".chatbox-close").addEventListener("click", () => {
+    chatbox.style.display = "none";
+});
+
+
+document.getElementById("send-btn").addEventListener("click", sendMessage);
+document.getElementById("chat-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
+
+function sendMessage() {
+    const input = document.getElementById("chat-input").value.trim();
+    if (input !== "") {
+        const messages = document.querySelector(".chatbox-messages");
+
+     
+        const userMessage = document.createElement("p");
+        userMessage.classList.add("user-message");
+        userMessage.innerHTML = `<strong>You:</strong> ${input}`;
+        messages.appendChild(userMessage);
+
+       
+        setTimeout(() => {
+            const botMessage = document.createElement("p");
+            botMessage.classList.add("bot-message");
+            botMessage.innerHTML = `<strong>AI:</strong> ${getBotResponse(input)}`;
+            messages.appendChild(botMessage);
+
+            
+            messages.scrollTop = messages.scrollHeight;
+        }, 1000);
+
+       
+        document.getElementById("chat-input").value = "";
+    }
+}
+
+
+function getBotResponse(input) {
+    input = input.toLowerCase();
+
+    if (input.includes("hello") || input.includes("hi")) {
+        return "Hello! How can I assist you today? 😊";
+    } else if (input.includes("donate")) {
+        return "You can donate food by signing up and selecting a nearby NGO. 📍";
+    } else if (input.includes("track donation")) {
+        return "You can track your donation via the live tracking system on our platform. 🚚";
+    } else if (input.includes("thank you")) {
+        return "You're welcome! Feel free to ask anything. 🤗";
+    } else {
+        return "I'm still learning. But I'll do my best to help you! 😊";
+    }
+}
+
+   </script>
+
+</body>
+</html>

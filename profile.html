@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Hacker Style</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script> <!-- Animation Library -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #2a2a2a;
+    color: #d3d3d3; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    background-color: #1f1f1f;
+    color: #ff6b81;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+header .logo {
+    font-weight: bold;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #ff6b81;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #56ab2f;
+    text-shadow: 0 0 15px #56ab2f;
+    transition: 0.3s ease-in-out;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-container {
+    background-color: #3a3a3a; 
+    border-radius: 20px;
+    width: 80%;
+    max-width: 900px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #56ab2f;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 107, 129, 0.8);
+}
+
+.profile-pic .emoji {
+    font-size: 70px;
+    position: absolute;
+}
+
+.user-info h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff6b81;
+    text-shadow: 0 0 10px #56ab2f;
+}
+
+.user-info p {
+    font-size: 18px;
+    color: #56ab2f;
+}
+
+.details-container, .organization-container {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.details-list {
+    list-style: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.details-list li {
+    margin: 12px 0;
+}
+
+.details-list li strong {
+    color: #ff6b81;
+}
+
+.organization-container h3 {
+    font-size: 22px;
+    color: #ff6b81;
+    margin-bottom: 15px;
+}
+
+.update-btn {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #56ab2f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px #56ab2f;
+}
+
+.update-btn:hover {
+    background-color: #ff6b81;
+    box-shadow: 0 0 20px #ff6b81;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-info h2 {
+        font-size: 24px;
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🕶️ Cyber Ares</div>
+        <nav>
+            <a href="main page.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="#">Donations</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <section class="profile-container">
+
+            <div class="profile-header">
+                <div class="profile-pic" id="profile-pic">
+                    <div class="emoji">💻</div>
+                </div>
+                <div class="user-info">
+                    <h2>Gayathri</h2>
+                    <p id="userPoints">🖥️ Leaderboard Points: 1200 XP</p>
+                </div>
+            </div>
+            <div class="details-container">
+                <ul class="details-list">
+                    <li><strong>💻 Active Member since:</strong> January 2022</li>
+                    <li><strong>🌍 Location:</strong> New York, USA</li>
+                    <li><strong>📈 Meals Donated:</strong> 500+ meals</li>
+                    <li><strong>⚙️ Top Donor:</strong> Rank #5 in the Community</li>
+                    <li><strong>🎯 Level:</strong> Level 8 Contributor</li>
+                </ul>
+            </div>
+
+            <div class="organization-container">
+                <h3>🌐 Organization Details</h3>
+                <p><strong>Type:</strong> <span id="userType">Donor</span></p>
+                <p><strong>Organization:</strong> Digital Bites Restaurant</p>
+                <p><strong>Category:</strong> Food Donor</p>
+                <p><strong>Impact:</strong> Provided meals to 5+ NGOs across New York</p>
+            </div>
+
+            <button class="update-btn" onclick="updateUserDetails()">Update Points</button>
+        </section>
+    </div>
+
+    <script>
+
+function updateUserDetails() {
+    let newPoints = Math.floor(Math.random() * 500) + 1200; 
+    let userType = ["Donor", "Receiver"][Math.floor(Math.random() * 2)];  
+
+    
+    document.getElementById('userPoints').textContent = `🖥️ Leaderboard Points: ${newPoints} XP`;
+
+    
+    document.getElementById('userType').textContent = userType;
+
+    
+    gsap.to("#profile-pic", {rotation: 360, duration: 1, ease: "power2.out"});
+}
+
+    </script>
+</body>
+</html>
